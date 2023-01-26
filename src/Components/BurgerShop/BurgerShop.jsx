@@ -10,7 +10,18 @@ import BurgerStack from './BurgerStack'
 const BurgerShop = () => {
   console.log(ingredients)
 
+  // const [ingredientList, setIngredientList] = useState(ingredients)
   const [stack, setStack] = useState([])
+
+  function handleAddToBurger(ingredient) {
+    setStack([...stack, ingredient])
+    // setIngredientList(ingredientList.filter((ing) => ing.name !== ing.name))
+  }
+  
+  function handleRemoveFromBurger(ingredient) {
+    setStack([...stack, ingredient])
+    // setIngredientList(ingredientList.filter((ing) => ing.name !== ing.name))
+  }
   
   return (
     <div className="burger-shop">
@@ -19,8 +30,8 @@ const BurgerShop = () => {
         <button>Clear Order</button>
       </nav>
       <section>
-        <IngredientList ingredients={ingredients} />
-        <BurgerStack stack={stack} />
+        <IngredientList ingredients={ingredients} handleAddToBurger={handleAddToBurger} />
+        <BurgerStack stack={stack} handleRemoveFromBurger={handleRemoveFromBurger} />
         
       </section>
     </div>

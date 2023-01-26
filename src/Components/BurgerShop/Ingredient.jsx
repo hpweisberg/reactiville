@@ -4,8 +4,8 @@ const Ingredient = (props) => {
 		<li>
 			{props.ingredient.name}
 			{props.isList
-				? <button>+</button>
-				: <button>X</button>
+				? <button onClick={() => props.handleAddToBurger(props.ingredient)}>+</button>
+				: <button onClick={() => props.handleRemoveFromBurger(props.ingredient)}>X</button>
 			}
 		</li>
 	)
