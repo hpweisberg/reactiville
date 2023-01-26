@@ -6,13 +6,19 @@ const BurgerStack = (props) => {
       {props.stack.length ?
         <>
           <ul className="burger-stack">
-            Use the map function and the Ingredient component here
-            {props.stack.map((stack, idx) => {
+            {props.stack.map((ing, idx) => {
               return (
                 <>
-                  {stack.name}
+                  <Ingredient
+                    key={idx}
+                    idx={idx}
+                    isList={false}
+                    ingredient={ing}
+                    handleRemoveFromBurger={props.handleRemoveFromBurger} />
+
                 </>
-              )}
+              )
+            }
             )}
           </ul>
         </>
