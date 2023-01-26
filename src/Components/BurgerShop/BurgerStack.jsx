@@ -12,8 +12,7 @@ const BurgerStack = (props) => {
                 <>
                   {stack.name}
                 </>
-              )
-            }
+              )}
             )}
           </ul>
         </>
