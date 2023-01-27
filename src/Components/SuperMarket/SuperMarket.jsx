@@ -26,7 +26,7 @@ const SuperMarket = () => {
       <section>
       <h1>{productCategory}</h1>
         <MarketNav products={products} updateProductCategory={updateProductCategory}/>
-        <DisplayProducts products={products}/>
+        <DisplayProducts products={products} productCategory={productCategory}/>
       </section>
 
       <Cart />
