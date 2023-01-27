@@ -11,6 +11,7 @@ const IngredientList = (props) => {
 						isList={true}
 						ingredient={ingredient}
 						handleAddToBurger={props.handleAddToBurger}
+						hasBuns={false}
 					/>
 				</>
 			)}
