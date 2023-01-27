@@ -1,10 +1,10 @@
 import CategoryMenu from "./CategoryMenu"
 
-const MarketNav = ({ products }) => {
+const MarketNav = ({ products, updateProductCategory }) => {
   return (
     <nav>
       <h1>Super Market</h1>
-      <CategoryMenu products={products}/>
+      <CategoryMenu products={products} updateProductCategory={updateProductCategory}/>
       <button id="cart-button"></button>
     </nav>
   )
