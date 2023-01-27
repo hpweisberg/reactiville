@@ -14,6 +14,10 @@ const App = () => {
 
   const [cash, setCash] = useState(100)
 
+  const handleExchange = (amt) => {
+    // HOLD
+  }
+
   return (
     <>
       <Nav cash={cash}></Nav>
