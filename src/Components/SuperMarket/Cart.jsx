@@ -1,6 +1,6 @@
 import CartItem from "./CartItem"
 
-const Cart = ({cart, handleRemoveFromCart}) => {
+const Cart = ({cart, handleRemoveFromCart, handleClearCart}) => {
   return (
     <div className="cart">
       <h3>Cart</h3>
@@ -22,7 +22,7 @@ const Cart = ({cart, handleRemoveFromCart}) => {
       </div>
 
       <button>CHECKOUT</button>
-      <button>CLEAR CART</button>
+      <button onClick={handleClearCart}>CLEAR CART</button>
     </div>
   )
 }
