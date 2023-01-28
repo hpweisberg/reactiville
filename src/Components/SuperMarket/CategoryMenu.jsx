@@ -10,7 +10,7 @@ const CategoryMenu = ({updateProductCategory, products = []}) => {
   return (
     <select onChange={(event) => updateProductCategory(event.target.value)}>
     {catagories.map(category => {
-      return <option>{category}</option>
+      return <option key={category}>{category}</option>
     })}
   </select>
   )
