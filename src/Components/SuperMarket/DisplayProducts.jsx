@@ -1,6 +1,6 @@
 import Product from "./Product"
 
-const DisplayProducts = ({productCategory, products, addToCart}) => {
+const DisplayProducts = ({productCategory, products, addToCart }) => {
   const selectedProducts = products.map((product, idx) => {
     return product.category === productCategory && <Product key={idx} product={product} addToCart={addToCart} />
   })

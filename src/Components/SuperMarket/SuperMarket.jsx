@@ -34,14 +34,26 @@ const SuperMarket = () => {
     }
   }
 
+  const handleRemoveFromCart = (item) => {
+    // onclick=(console.log('removvvvve this', item.name))
+    if (item.quantity > 1){
+      setCart(cart.map((prod) => prod.id === item.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : prod
+      ))
+    } else {
+      setCart(cart.filter((prod) => prod.id !== item.id))
+    }
+  }
+
   return (
     <div className="super-market">
       <section>
         <MarketNav products={products} updateProductCategory={updateProductCategory}/>
-        <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart}/>
+        <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart cart={cart}/>
+      <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart}/>
 
     </div>
   )
