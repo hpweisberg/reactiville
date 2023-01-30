@@ -10,12 +10,13 @@ import SuperMarket from './Components/SuperMarket/SuperMarket'
 import Landing from './Components/Landing/Landing'
 import Wallet from './Components/Nav/Wallet'
 
-const App = () => {
+const App = (props) => {
 
   const [cash, setCash] = useState(100)
 
   const handleExchange = (amt) => {
-    // HOLD
+    if (cash - amt > 0) setCash((cash - amt).toFixed(2))
+
   }
 
   return (
@@ -25,7 +26,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/burgers' element={<BurgerShop />} />
-        <Route path='/market' element={<SuperMarket />} />
+        <Route path='/market' element={<SupermkdMarket {...props}handleExchange={handleExchange} />} />
       </Routes>
     </main>
     </>

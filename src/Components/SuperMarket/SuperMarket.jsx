@@ -6,12 +6,13 @@ import MarketNav from './MarketNav'
 import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
 
+
 // Components & Data
 import { products } from '../../data/market-data'
-import CategoryMenu from './CategoryMenu'
+// import CategoryMenu from './CategoryMenu'
 
-const SuperMarket = () => {
-  console.log('Imported product data:::', products)
+const SuperMarket = (handleExchange, props) => {
+  // console.log('Imported product data:::', products)
 
   const [cart, setCart] = useState([])
   //!// Answer for next part(selected category)
@@ -22,7 +23,7 @@ const SuperMarket = () => {
   }
 
   const addToCart = (item) => {
-    console.log('addToCart works!!!', item)
+    // console.log('addToCart works!!!', item)
     const isItemInCart = cart.some((prod) => prod.id === item.id)
     if (isItemInCart){
     setCart(cart.map((prod) => prod.id === item.id 
@@ -57,7 +58,7 @@ const SuperMarket = () => {
         <DisplayProducts products={products} productCategory={productCategory} addToCart={addToCart} />
       </section>
 
-      <Cart cart={cart} handleRemoveFromCart={handleRemoveFromCart} handleClearCart={handleClearCart}/>
+      <Cart {...props} setCart={setCart} cart={cart} handleRemoveFromCart={handleRemoveFromCart} handleClearCart={handleClearCart} handleExchange={handleExchange} />
 
     </div>
   )
