@@ -26,7 +26,7 @@ const App = (props) => {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/burgers' element={<BurgerShop />} />
-        <Route path='/market' element={<SupermkdMarket {...props}handleExchange={handleExchange} />} />
+        <Route path='/market' element={<SuperMarket {...props}handleExchange={handleExchange} />} />
       </Routes>
     </main>
     </>
